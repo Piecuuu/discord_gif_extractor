@@ -1,0 +1,3 @@
+[submodule "lib/base64pp"]
+	path = lib/base64pp
+	url = https://github.com/matheusgomes28/base64pp
