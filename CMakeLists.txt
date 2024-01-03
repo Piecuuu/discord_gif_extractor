@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(discord_gif_extractor VERSION 1.0 DESCRIPTION "A tool to rip out gif links from your favorites")
 
 add_subdirectory(lib/base64pp)
+add_subdirectory(lib/argparse)
 find_package(Protobuf REQUIRED)
 find_package(absl REQUIRED)
 find_package(nlohmann_json REQUIRED)
@@ -21,6 +22,7 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
+	lib/argparse/include
 	lib/base64pp/base64pp/include/base64pp
 	${CMAKE_BINARY_DIR}
 	${PROTO_HDRS}
