@@ -1,3 +1,6 @@
 [submodule "lib/base64pp"]
 	path = lib/base64pp
 	url = https://github.com/matheusgomes28/base64pp
+[submodule "lib/argparse"]
+	path = lib/argparse
+	url = https://github.com/p-ranav/argparse
