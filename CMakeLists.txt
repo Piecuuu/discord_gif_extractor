@@ -8,7 +8,7 @@ find_package(absl REQUIRED)
 find_package(nlohmann_json REQUIRED)
 find_package(CURL REQUIRED)
 
-protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ${CMAKE_SOURCE_DIR}/src/proto/FrecencyUserSettings.proto)
+protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ${PROJECT_SOURCE_DIR}/src/proto/FrecencyUserSettings.proto)
 
 add_executable(${PROJECT_NAME}
 	src/main.cc
@@ -28,7 +28,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 	lib/argparse/include
 	lib/base64pp/base64pp/include/base64pp
 	${CURL_INCLUDE_DIR}
-	${CMAKE_BINARY_DIR}
+	${PROJECT_BINARY_DIR}
 	${PROTO_HDRS}
 )
 
