@@ -20,9 +20,17 @@ make
 ```
 ### Using
 #### Getting the encoded data
-TODO: Write it
+TODO: Write about manually getting it. The newest update includes `-t` with usage is described in [Option A](#option-a-providing-your-discord-token-for-the-program-to-automatically-pull-in-the-data) or usage.
 
 #### Using the extractor
+
+#### Option A: Providing your Discord Token for the program to automatically pull in the data.
+It's as easy as running (replace `TOKEN` with your actual token):
+```sh
+./discord_gif_extractor -t TOKEN
+```
+
+#### Option B: Decode data you got by manually sending a GET request or by looking in the Network tab of devtools.
 Go to the directory you've built the program in (it's probably `build/`).
 
 Create a file named `data.txt` and paste the encoded data inside the file.
