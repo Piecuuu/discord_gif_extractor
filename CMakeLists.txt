@@ -12,6 +12,7 @@ protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ${CMAKE_SOURCE_DIR}/src/proto/Frecen
 
 add_executable(${PROJECT_NAME}
 	src/main.cc
+	src/gif_extractor.cc
 	${PROTO_SRCS}
 )
 
