@@ -37,7 +37,7 @@ std::string get_data_by_token(const std::string& token) {
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&data);
     res = curl_easy_perform(curl);
-    if(res == CURLM_OK) {
+    if(res == CURLE_OK) {
       return remove_prefix_and_suffix(data, "{\"settings\":\"", "\"}");
     } else {
       throw std::runtime_error("CURL has returned a non-ok status");
@@ -60,7 +60,7 @@ std::string protobuf_to_json(const std::string& protobuf_data) {
   std::string json_data;
   google::protobuf::util::JsonPrintOptions options;
   options.add_whitespace = false;
-  options.always_print_primitive_fields = true;
+  options.always_print_fields_with_no_presence = true;
   google::protobuf::util::MessageToJsonString(user_settings, &json_data, options);
 
   return json_data;
